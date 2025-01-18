@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
+
+import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/sizes.dart';
+
+
 /// A container widget with rounded corners and customizable properties.
-class RoundedContainer extends StatelessWidget {
+class TRoundedContainer extends StatelessWidget {
   /// Create a rounded container with customizable properties.
   ///
   /// Parameters:
@@ -14,7 +19,7 @@ class RoundedContainer extends StatelessWidget {
   ///   - backgroundColor: The background color of the container.
   ///   - borderColor: The color of the container's border.
   ///   - showBorder: A flag to determine if the container should have a border.
-  const RoundedContainer({
+  const TRoundedContainer({
     super.key,
     this.child,
     this.width,
@@ -22,10 +27,10 @@ class RoundedContainer extends StatelessWidget {
     this.margin,
     this.showShadow = true,
     this.showBorder = false,
-    this.padding = const EdgeInsets.all(10),
-    this.borderColor = Colors.grey,
-    this.radius = 10,
-    this.backgroundColor = Colors.white,
+    this.padding = const EdgeInsets.all(TSizes.md),
+    this.borderColor = TColors.borderPrimary,
+    this.radius = TSizes.cardRadiusLg,
+    this.backgroundColor = TColors.white,
     this.onTap,
   });
 
@@ -57,7 +62,7 @@ class RoundedContainer extends StatelessWidget {
           boxShadow: [
             if (showShadow)
               BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
+                color: TColors.grey.withOpacity(0.1),
                 spreadRadius: 5,
                 blurRadius: 8,
                 offset: const Offset(0, 3),

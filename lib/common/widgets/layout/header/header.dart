@@ -22,6 +22,30 @@ class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
         leading: !TDeviceUtils.isDesktopScreen(context)
             ? IconButton(onPressed: (() {}), icon: const Icon(Icons.menu))
             : null,
+        title: SizedBox(
+          width: 400,
+          // height: 80,
+          child: TDeviceUtils.isDesktopScreen(context)
+              ? TextFormField(
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.search_rounded),
+                      hintText: 'Search Anything'),
+                )
+              : null,
+        ),
+        actions: [
+          if (!TDeviceUtils.isDesktopScreen(context))
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.search,
+                )),
+          IconButton(onPressed: (() {}), icon: const Icon(Icons.notifications)),
+          const SizedBox(
+            width: TSizes.spaceBtwItems / 2,
+          )
+          // user Data
+        ],
       ),
     );
   }

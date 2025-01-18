@@ -24,7 +24,6 @@ class SiteLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    
       body: CustomLayoutBuilder(
         desktop: useLayout
             ? DesktopLayout(

@@ -1,11 +1,12 @@
-import 'package:ecommerce_admin_panel/common/widgets/customshapes/container/rounded_container.dart';
+// import 'package:ecommerce_admin_panel/common/widgets/customshapes/container/rounded_container.dart';
+import 'package:ecommerce_admin_panel/common/widgets/layout/templates/site_layout.dart';
 import 'package:ecommerce_admin_panel/routes/appRoutes.dart';
 import 'package:ecommerce_admin_panel/utils/constants/text_strings.dart';
 import 'package:ecommerce_admin_panel/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
-import 'common/responsive/responsive_design.dart';
+import 'common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'routes/routes.dart';
 
 class App extends StatelessWidget {
@@ -35,17 +36,23 @@ class ResponsiveDesignScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.all(30),
-        child: CustomLayoutBuilder(
-          desktop: DeskTop(),
-          tablet: Tablet(),
-          mobile: Mobile(),
-        ),
-      ),
-    ));
+    return const SiteLayout(
+      desktop: DeskTop(),
+      tablet: Tablet(),
+      mobile: Mobile(),
+    );
+
+    // const Scaffold(
+    //     body: SingleChildScrollView(
+    //   child: Padding(
+    //     padding: EdgeInsets.all(30),
+    //     child: CustomLayoutBuilder(
+    //       desktop: DeskTop(),
+    //       tablet: Tablet(),
+    //       mobile: Mobile(),
+    //     ),
+    //   ),
+    // ));
   }
 }
 
@@ -67,7 +74,7 @@ class DeskTop extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: [
-                    RoundedContainer(
+                    TRoundedContainer(
                       height: 450,
                       // width: 200,
                       backgroundColor: Colors.blue.withOpacity(0.2),
@@ -83,7 +90,7 @@ class DeskTop extends StatelessWidget {
                 flex: 2,
                 child: Column(
                   children: [
-                    RoundedContainer(
+                    TRoundedContainer(
                       height: 215,
                       backgroundColor: Colors.orange.withOpacity(0.2),
                       child: const Center(child: Text('Box 2')),
@@ -96,7 +103,7 @@ class DeskTop extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: RoundedContainer(
+                            child: TRoundedContainer(
                               height: 215,
                               width: 200,
                               backgroundColor: Colors.red.withOpacity(0.2),
@@ -107,7 +114,7 @@ class DeskTop extends StatelessWidget {
                             width: 20,
                           ),
                           Expanded(
-                            child: RoundedContainer(
+                            child: TRoundedContainer(
                               height: 215,
                               width: 200,
                               backgroundColor: Colors.green.withOpacity(0.2),
@@ -133,7 +140,7 @@ class DeskTop extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  child: RoundedContainer(
+                  child: TRoundedContainer(
                     height: 250,
                     width: 200,
                     backgroundColor: Colors.purple.withOpacity(0.2),
@@ -144,7 +151,7 @@ class DeskTop extends StatelessWidget {
                   width: 20,
                 ),
                 Expanded(
-                  child: RoundedContainer(
+                  child: TRoundedContainer(
                     height: 250,
                     width: 200,
                     backgroundColor: Colors.blueAccent.withOpacity(0.2),
@@ -176,7 +183,7 @@ class Tablet extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: [
-                    RoundedContainer(
+                    TRoundedContainer(
                       height: 450,
                       // width: 200,
                       backgroundColor: Colors.blue.withOpacity(0.2),
@@ -192,7 +199,7 @@ class Tablet extends StatelessWidget {
                 flex: 2,
                 child: Column(
                   children: [
-                    RoundedContainer(
+                    TRoundedContainer(
                       height: 215,
                       backgroundColor: Colors.orange.withOpacity(0.2),
                       child: const Center(child: Text('Box 2')),
@@ -205,7 +212,7 @@ class Tablet extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: RoundedContainer(
+                            child: TRoundedContainer(
                               height: 215,
                               width: 200,
                               backgroundColor: Colors.red.withOpacity(0.2),
@@ -216,7 +223,7 @@ class Tablet extends StatelessWidget {
                             width: 20,
                           ),
                           Expanded(
-                            child: RoundedContainer(
+                            child: TRoundedContainer(
                               height: 215,
                               width: 200,
                               backgroundColor: Colors.green.withOpacity(0.2),
@@ -243,7 +250,7 @@ class Tablet extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(
-                  child: RoundedContainer(
+                  child: TRoundedContainer(
                     height: 190,
                     width: double.infinity,
                     backgroundColor: Colors.purple.withOpacity(0.2),
@@ -254,7 +261,7 @@ class Tablet extends StatelessWidget {
                   height: 20,
                 ),
                 Expanded(
-                  child: RoundedContainer(
+                  child: TRoundedContainer(
                     height: 190,
                     width: double.infinity,
                     backgroundColor: Colors.greenAccent.withOpacity(0.2),
@@ -278,7 +285,7 @@ class Mobile extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          RoundedContainer(
+          TRoundedContainer(
             height: 450,
             width: double.infinity,
             backgroundColor: Colors.blue.withOpacity(0.2),
@@ -289,7 +296,7 @@ class Mobile extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          RoundedContainer(
+          TRoundedContainer(
             height: 250,
             width: double.infinity,
             backgroundColor: Colors.orange.withOpacity(0.2),
@@ -300,7 +307,7 @@ class Mobile extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          RoundedContainer(
+          TRoundedContainer(
             height: 250,
             width: double.infinity,
             backgroundColor: Colors.red.withOpacity(0.2),
@@ -311,7 +318,7 @@ class Mobile extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          RoundedContainer(
+          TRoundedContainer(
             height: 250,
             width: double.infinity,
             backgroundColor: Colors.green.withOpacity(0.2),
@@ -322,7 +329,7 @@ class Mobile extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          RoundedContainer(
+          TRoundedContainer(
             height: 250,
             width: double.infinity,
             backgroundColor: Colors.purple.withOpacity(0.2),

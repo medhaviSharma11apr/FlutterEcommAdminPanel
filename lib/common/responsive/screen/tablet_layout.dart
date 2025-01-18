@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/layout/headers/header.dart';
+import '../../widgets/layout/header/header.dart';
+import '../../widgets/layout/templates/header.dart';
 
 class TabletLayout extends StatelessWidget {
   const TabletLayout({super.key, required this.body});
@@ -10,7 +11,7 @@ class TabletLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const Drawer(),
-      appBar: HeaderWidget(),
+      appBar: const HeaderWidget(),
       body: body ?? Container(),
     );
   }
