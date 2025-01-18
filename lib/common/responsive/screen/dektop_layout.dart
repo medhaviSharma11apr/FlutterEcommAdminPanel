@@ -1,8 +1,7 @@
-
+import 'package:ecommerce_admin_panel/common/widgets/layout/sidebar/sidebar.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/layout/header/header.dart';
-import '../../widgets/layout/templates/header.dart';
 
 class DesktopLayout extends StatelessWidget {
   const DesktopLayout({super.key, this.body});
@@ -13,7 +12,7 @@ class DesktopLayout extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: [
-          const Expanded(child: Drawer()),
+          const Expanded(child: SideBarCustom()),
           Expanded(
               flex: 5,
               child: Column(
@@ -22,18 +21,6 @@ class DesktopLayout extends StatelessWidget {
 
                   const HeaderWidget(),
 
-                  // RoundedContainer(
-                  //   width: double.infinity,
-                  //   height: 75,
-                  //   backgroundColor: Colors.yellow.withOpacity(0.2),
-                  // ),
-
-                  // body
-                  // RoundedContainer(
-                  //   width: double.infinity,
-                  //   height: 500,
-                  //   backgroundColor: Colors.blue.withOpacity(0.2),
-                  // ),
                   body ?? Container(),
                 ],
               ))

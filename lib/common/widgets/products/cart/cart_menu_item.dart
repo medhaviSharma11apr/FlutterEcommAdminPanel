@@ -1,4 +1,5 @@
 import 'package:ecommerce_admin_panel/utils/constants/colors.dart';
+import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utils/constants/image_strings.dart';
@@ -22,10 +23,10 @@ class CartItem extends StatelessWidget {
           imageUrl: TImages.productImage1,
           width: 60,
           height: 60,
-          padding: const EdgeInsets.all(TSizes.sm),
+          padding: TSizes.sm,
           backgroundColor: THelperFunctions.isDarkMode(context)
               ? TColors.darkerGrey
-              : TColors.light,
+              : TColors.light, imageType:ImageType.network,
         ),
         const SizedBox(
           width: TSizes.spaceBtwItems,

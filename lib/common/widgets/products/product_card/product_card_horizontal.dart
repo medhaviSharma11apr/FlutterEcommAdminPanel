@@ -1,5 +1,6 @@
 import 'package:ecommerce_admin_panel/common/widgets/products/product_card/product_price_text.dart';
 import 'package:ecommerce_admin_panel/utils/constants/colors.dart';
+import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
 import 'package:flutter/material.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -39,7 +40,7 @@ class ProductHorizontalCard extends StatelessWidget {
                   width: 120,
                   child: TRoundedImage(
                     imageUrl: TImages.productImage1,
-                    applyImageRadius: true,
+                    applyImageRadius: true, imageType: ImageType.network,
                   ),
                 ),
 

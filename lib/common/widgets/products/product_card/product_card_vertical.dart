@@ -2,6 +2,7 @@ import 'package:ecommerce_admin_panel/common/widgets/custom_shapes/containers/ro
 import 'package:ecommerce_admin_panel/common/widgets/images/t_rounded_images.dart';
 import 'package:ecommerce_admin_panel/common/widgets/products/product_card/product_price_text.dart';
 import 'package:ecommerce_admin_panel/utils/constants/colors.dart';
+import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,6 +45,7 @@ class ProductVerticalCard extends StatelessWidget {
                 children: [
                   // Thumbnail Images
                   TRoundedImage(
+                    imageType: ImageType.network,
                     imageUrl: imageUrl,
                     applyImageRadius: true,
                   ),
