@@ -5,7 +5,6 @@ import 'package:ecommerce_admin_panel/utils/constants/text_strings.dart';
 import 'package:ecommerce_admin_panel/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-
 import 'common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'routes/routes.dart';
 
@@ -21,7 +20,7 @@ class App extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       getPages: AppRoutes.pages,
-      initialRoute: Routes.responsiveDesignScreen,
+      initialRoute: Routes.login,
       unknownRoute: GetPage(
           name: '/page-not-found',
           page: (() => const Scaffold(
@@ -41,18 +40,6 @@ class ResponsiveDesignScreen extends StatelessWidget {
       tablet: Tablet(),
       mobile: Mobile(),
     );
-
-    // const Scaffold(
-    //     body: SingleChildScrollView(
-    //   child: Padding(
-    //     padding: EdgeInsets.all(30),
-    //     child: CustomLayoutBuilder(
-    //       desktop: DeskTop(),
-    //       tablet: Tablet(),
-    //       mobile: Mobile(),
-    //     ),
-    //   ),
-    // ));
   }
 }
 

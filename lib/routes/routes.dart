@@ -5,6 +5,8 @@ class Routes {
 
   static const responsiveDesignScreen = '/responsiveDesignScreen';
 
+  static List sideMenuItems = [firstscreen, secondscreen, secondscreenWithUid];
+
   //
   static const login = '/login';
   static const forgetPassword = '/forgetPassword';

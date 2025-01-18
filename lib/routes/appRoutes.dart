@@ -1,6 +1,8 @@
 import 'package:ecommerce_admin_panel/app.dart';
+import 'package:ecommerce_admin_panel/features/authentication/screen/login.dart';
 import 'package:ecommerce_admin_panel/routes/routemiddleware.dart';
 import 'package:ecommerce_admin_panel/routes/routes.dart';
+import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
 class AppRoutes {
@@ -18,6 +20,9 @@ class AppRoutes {
       page: () => const SecondScreen(),
       middlewares: [RouteMiddleWare()],
     ),
+
     GetPage(name: Routes.secondscreenWithUid, page: () => const SecondScreen()),
+
+    GetPage(name: Routes.login, page: (() => LoginScreen()))
   ];
 }
