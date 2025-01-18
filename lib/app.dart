@@ -1,6 +1,5 @@
 import 'package:ecommerce_admin_panel/common/widgets/customshapes/container/rounded_container.dart';
 import 'package:ecommerce_admin_panel/routes/appRoutes.dart';
-import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:ecommerce_admin_panel/utils/constants/text_strings.dart';
 import 'package:ecommerce_admin_panel/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -37,22 +36,21 @@ class ResponsiveDesignScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(30),
-          child: CustomLayoutBuilder(
-            desktop: DeskTopWidget(),
-            tablet: SizedBox(),
-            mobile: SizedBox(),
-          ),
+        body: SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.all(30),
+        child: CustomLayoutBuilder(
+          desktop: DeskTop(),
+          tablet: Tablet(),
+          mobile: Mobile(),
         ),
       ),
-    );
+    ));
   }
 }
 
-class DeskTopWidget extends StatelessWidget {
-  const DeskTopWidget({
+class DeskTop extends StatelessWidget {
+  const DeskTop({
     Key? key,
   }) : super(key: key);
 
@@ -81,16 +79,14 @@ class DeskTopWidget extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-              SizedBox(
-                height: 450,
+              Expanded(
+                flex: 2,
                 child: Column(
                   children: [
-                    Expanded(
-                      child: RoundedContainer(
-                        height: 250,
-                        backgroundColor: Colors.blue.withOpacity(0.2),
-                        child: const Center(child: Text('Box 2')),
-                      ),
+                    RoundedContainer(
+                      height: 215,
+                      backgroundColor: Colors.orange.withOpacity(0.2),
+                      child: const Center(child: Text('Box 2')),
                     ),
                     const SizedBox(
                       height: 20,
@@ -101,9 +97,9 @@ class DeskTopWidget extends StatelessWidget {
                         children: [
                           Expanded(
                             child: RoundedContainer(
-                              height: 250,
+                              height: 215,
                               width: 200,
-                              backgroundColor: Colors.blue.withOpacity(0.2),
+                              backgroundColor: Colors.red.withOpacity(0.2),
                               child: const Center(child: Text('Box 3')),
                             ),
                           ),
@@ -112,9 +108,9 @@ class DeskTopWidget extends StatelessWidget {
                           ),
                           Expanded(
                             child: RoundedContainer(
-                              height: 250,
+                              height: 215,
                               width: 200,
-                              backgroundColor: Colors.blue.withOpacity(0.2),
+                              backgroundColor: Colors.green.withOpacity(0.2),
                               child: const Center(child: Text('Box 4')),
                             ),
                           ),
@@ -126,7 +122,7 @@ class DeskTopWidget extends StatelessWidget {
               )
             ],
           ),
-          // main Row 2
+          // Second Row 2
 
           const SizedBox(
             height: 20,
@@ -140,7 +136,7 @@ class DeskTopWidget extends StatelessWidget {
                   child: RoundedContainer(
                     height: 250,
                     width: 200,
-                    backgroundColor: Colors.blue.withOpacity(0.2),
+                    backgroundColor: Colors.purple.withOpacity(0.2),
                     child: const Center(child: Text('Box 1')),
                   ),
                 ),
@@ -151,13 +147,192 @@ class DeskTopWidget extends StatelessWidget {
                   child: RoundedContainer(
                     height: 250,
                     width: 200,
-                    backgroundColor: Colors.blue.withOpacity(0.2),
+                    backgroundColor: Colors.blueAccent.withOpacity(0.2),
                     child: const Center(child: Text('Box 1')),
                   ),
                 ),
               ],
             ),
           )
+        ],
+      ),
+    );
+  }
+}
+
+class Tablet extends StatelessWidget {
+  const Tablet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height,
+      child: Column(
+        children: [
+          // main Row 1
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    RoundedContainer(
+                      height: 450,
+                      // width: 200,
+                      backgroundColor: Colors.blue.withOpacity(0.2),
+                      child: const Center(child: Text('Box 1')),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Expanded(
+                flex: 2,
+                child: Column(
+                  children: [
+                    RoundedContainer(
+                      height: 215,
+                      backgroundColor: Colors.orange.withOpacity(0.2),
+                      child: const Center(child: Text('Box 2')),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: RoundedContainer(
+                              height: 215,
+                              width: 200,
+                              backgroundColor: Colors.red.withOpacity(0.2),
+                              child: const Center(child: Text('Box 3')),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Expanded(
+                            child: RoundedContainer(
+                              height: 215,
+                              width: 200,
+                              backgroundColor: Colors.green.withOpacity(0.2),
+                              child: const Center(child: Text('Box 4')),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+          // Second Row 2200
+
+          const SizedBox(
+            height: 20,
+          ),
+
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: 200,
+            child: Column(
+              children: [
+                Expanded(
+                  child: RoundedContainer(
+                    height: 190,
+                    width: double.infinity,
+                    backgroundColor: Colors.purple.withOpacity(0.2),
+                    child: const Center(child: Text('Box 5')),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Expanded(
+                  child: RoundedContainer(
+                    height: 190,
+                    width: double.infinity,
+                    backgroundColor: Colors.greenAccent.withOpacity(0.2),
+                    child: const Center(child: Text('Box 6')),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class Mobile extends StatelessWidget {
+  const Mobile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          RoundedContainer(
+            height: 450,
+            width: double.infinity,
+            backgroundColor: Colors.blue.withOpacity(0.2),
+            child: const Center(
+              child: Text('Box 1'),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          RoundedContainer(
+            height: 250,
+            width: double.infinity,
+            backgroundColor: Colors.orange.withOpacity(0.2),
+            child: const Center(
+              child: Text('Box 2'),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          RoundedContainer(
+            height: 250,
+            width: double.infinity,
+            backgroundColor: Colors.red.withOpacity(0.2),
+            child: const Center(
+              child: Text('Box 3'),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          RoundedContainer(
+            height: 250,
+            width: double.infinity,
+            backgroundColor: Colors.green.withOpacity(0.2),
+            child: const Center(
+              child: Text('Box 4'),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          RoundedContainer(
+            height: 250,
+            width: double.infinity,
+            backgroundColor: Colors.purple.withOpacity(0.2),
+            child: const Center(
+              child: Text('Box 5'),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
         ],
       ),
     );
@@ -250,15 +425,3 @@ class SecondScreen extends StatelessWidget {
     return const Center(child: Text('Second Screen'));
   }
 }
-
-
-
-
-  // Expanded(
-  //               child: RoundedContainer(
-  //                 height: 450,
-  //                 width: 200,
-  //                 backgroundColor: Colors.blue.withOpacity(0.2),
-  //                 child: const Center(child: Text('Box 1')),
-  //               ),
-  //             ),
