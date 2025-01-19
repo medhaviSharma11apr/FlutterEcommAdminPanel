@@ -1,5 +1,7 @@
+import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:ecommerce_admin_panel/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../utils/constants/sizes.dart';
 
@@ -57,7 +59,11 @@ class Loginform extends StatelessWidget {
                 // Forget pass word
 
                 TextButton(
-                  onPressed: (() {}),
+                  onPressed: (() {
+                    Get.toNamed(
+                      Routes.forgetPassword,
+                    );
+                  }),
                   child: const Text(
                     TTexts.forgetPassword,
                   ),
