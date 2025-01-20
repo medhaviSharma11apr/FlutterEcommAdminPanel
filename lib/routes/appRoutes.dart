@@ -7,6 +7,8 @@ import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
+import '../features/authentication/screen/dashboard/dashboard.dart';
+
 class AppRoutes {
   static final List<GetPage> pages = [
     GetPage(
@@ -27,5 +29,6 @@ class AppRoutes {
     GetPage(name: Routes.forgetPassword, page: (() => const ForgetPasswordScreen())),
     GetPage(
         name: Routes.resetPassword, page: (() => const ResetPasswordScreen())),
+    GetPage(name: Routes.dashboard, page:(() => DashBoardScreen()),middlewares: [RouteMiddleWare()])
   ];
 }

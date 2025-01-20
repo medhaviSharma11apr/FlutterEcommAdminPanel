@@ -20,7 +20,7 @@ class App extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       getPages: AppRoutes.pages,
-      initialRoute: Routes.login,
+      initialRoute: Routes.dashboard,
       unknownRoute: GetPage(
           name: '/page-not-found',
           page: (() => const Scaffold(
@@ -29,19 +29,6 @@ class App extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class ResponsiveDesignScreen extends StatelessWidget {
   const ResponsiveDesignScreen({super.key});

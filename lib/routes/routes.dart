@@ -7,6 +7,10 @@ class Routes {
 
   static List sideMenuItems = [firstscreen, secondscreen, secondscreenWithUid];
 
+  static List sidebarMenuItems = [
+    dashboard,
+  ];
+
   //
   static const login = '/login';
   static const forgetPassword = '/forgetPassword';

@@ -1,9 +1,11 @@
 import 'package:ecommerce_admin_panel/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'app.dart';
+import 'data/repositories.authentication/authentication_repository.dart';
 
 // Entry Point For Flutter App
 Future<void> main() async {
@@ -18,10 +20,10 @@ Future<void> main() async {
 
   // Initialize Firebase app auth
 
-  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // .then(
-  //   (FirebaseApp value) => Get.put(AuthenticationRepository()),
-  // );
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+  .then(
+    (FirebaseApp value) => Get.put(AuthenticationRepository()),
+  );
 
   // Main App starts here
   runApp(const App());
