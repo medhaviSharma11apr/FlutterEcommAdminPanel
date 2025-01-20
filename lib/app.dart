@@ -1,4 +1,5 @@
 // import 'package:ecommerce_admin_panel/common/widgets/customshapes/container/rounded_container.dart';
+import 'package:ecommerce_admin_panel/bindings/general_binding.dart';
 import 'package:ecommerce_admin_panel/common/widgets/layout/templates/site_layout.dart';
 import 'package:ecommerce_admin_panel/routes/appRoutes.dart';
 import 'package:ecommerce_admin_panel/utils/constants/text_strings.dart';
@@ -14,6 +15,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: GeneralBinding(),
       debugShowCheckedModeBanner: false,
       title: TTexts.appName,
       themeMode: ThemeMode.light,

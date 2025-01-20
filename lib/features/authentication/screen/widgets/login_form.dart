@@ -1,9 +1,11 @@
 import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:ecommerce_admin_panel/utils/constants/text_strings.dart';
+import 'package:ecommerce_admin_panel/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../utils/constants/sizes.dart';
+import '../../controller/login_controller.dart';
 
 class Loginform extends StatelessWidget {
   const Loginform({
@@ -12,7 +14,9 @@ class Loginform extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Form(
+      key: controller.loginformkey,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: TSizes.spaceBtwSections,
@@ -21,6 +25,8 @@ class Loginform extends StatelessWidget {
           children: [
             // Email
             TextFormField(
+              validator: TValidator.validateEmail,
+              controller: controller.email,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.directions),
                 labelText: TTexts.email,
@@ -31,13 +37,23 @@ class Loginform extends StatelessWidget {
               height: TSizes.spaceBtwInputFields,
             ),
             // PassWord
-            TextFormField(
-              decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.password),
-                  labelText: TTexts.password,
-                  suffixIcon: IconButton(
-                      onPressed: (() {}), icon: const Icon(Icons.visibility))),
-            ),
+            Obx((() => TextFormField(
+                  obscureText: controller.hidepassword.value,
+                  controller: controller.password,
+                  validator: ((value) =>
+                      TValidator.validateEmptyText('Password', value)),
+                  decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.password),
+                      labelText: TTexts.password,
+                      suffixIcon: IconButton(
+                          onPressed: (() {
+                            controller.hidepassword.value =
+                                !controller.hidepassword.value;
+                          }),
+                          icon: !controller.hidepassword.value
+                              ? const Icon(Icons.visibility_off)
+                              : const Icon(Icons.visibility))),
+                ))),
             const SizedBox(
               height: TSizes.spaceBtwInputFields / 2,
             ),
@@ -51,7 +67,10 @@ class Loginform extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Checkbox(value: true, onChanged: ((value) => false)),
+                    Obx((() => Checkbox(
+                        value: controller.rememberMe.value,
+                        onChanged: ((value) => controller.rememberMe.value =
+                            !controller.rememberMe.value)))),
                     const Text(TTexts.rememberMe)
                   ],
                 ),
@@ -78,7 +97,10 @@ class Loginform extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: (() {}),
+                  onPressed: (() {
+                    controller.registerAdmin();
+                    // controller.emailAndPasswordSignIn();
+                  }),
                   child: const Text(
                     TTexts.signIn,
                   )),
