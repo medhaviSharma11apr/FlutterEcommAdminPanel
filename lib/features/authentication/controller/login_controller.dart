@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ecommerce_admin_panel/data/repositories/authenticationrepository/authentication_repository.dart';
 import 'package:ecommerce_admin_panel/data/repositories/user/user_repository.dart';
 import 'package:ecommerce_admin_panel/features/authentication/controller/user_controller.dart';
@@ -94,11 +96,12 @@ class LoginController extends GetxController {
   Future<void> registerAdmin() async {
     try {
       // start loading
+      log('1');
       FullScreenLoader.openLoadingDialog(
         'Registering Admin Account ... ',
         TImages.docerAnimation,
       );
-
+      log('2');
       // check network or internet connectivity
 
       final isConnected = await NetworkManager.instance.isConnected();
@@ -106,31 +109,34 @@ class LoginController extends GetxController {
       if (!isConnected) {
         FullScreenLoader.stopLoading();
       }
-
+      log('3');
       // register user using  email and password Authentication
       await AuthenticationRepository.instance.registerWithEmailAndPassword(
         email.text,
         password.text,
       );
-
+      log('4');
       // crete admin record in firebase
       final userRepository = Get.put(UserRepository());
+      log('5');
       await userRepository.createUser(UserModel(
         id: AuthenticationRepository.instance.authUser!.uid,
         firstName: 'First',
         lastName: 'last',
         userName: 'first last',
         email: TTexts.adminEmail,
-        role: AppRole.admin,
+        // role: AppRole.admin,
+        role: 'Admin',
         createdAt: DateTime.now(),
       ));
-
+      log('6');
       // remove loader
 
       FullScreenLoader.stopLoading();
       // screen redirect
-
+      log('7');
       AuthenticationRepository.instance.screenRedirect();
+      log('8');
     } catch (e) {
       FullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(

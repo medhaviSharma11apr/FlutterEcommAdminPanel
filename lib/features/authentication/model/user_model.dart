@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
 // import 'package:flutterstore/utils/formatters/formatter.dart';
 
 import '../../../utils/formatters/formatter.dart';
@@ -13,7 +12,8 @@ class UserModel {
     this.phoneNumber = '',
     this.profilePicture = '',
     this.id,
-    this.role = AppRole.user,
+    // this.role = AppRole.user,
+    this.role = 'Admin',
     this.createdAt,
     this.updatedAt,
   });
@@ -24,7 +24,8 @@ class UserModel {
   final String email;
   final String phoneNumber;
   final String profilePicture;
-  AppRole role;
+  String role;
+  // AppRole role;
   DateTime? createdAt;
   DateTime? updatedAt;
 
@@ -73,18 +74,25 @@ class UserModel {
     if (document.data() != null) {
       final data = document.data();
       return UserModel(
-         id: document.id,
-        firstName:data!.containsKey('FirstName')?  data['FirstName'] ?? '':'',
-        lastName: data.containsKey('LastName') ? data['LastName'] ?? '':'',
-        userName: data.containsKey('UserName')? data['UserName']??'':'',
-        email: data.containsKey('Email')? data['Email']??'':'',
-        phoneNumber: data.containsKey('PhoneNumber')? data['PhoneNumber'] ??'':'',
-        profilePicture: data.containsKey('profilePicture')? data['profilePicture'] ?? '':'',
-        role: data.containsKey('Role') ? (data['Role']?? AppRole.user)== AppRole.admin.name.toString()? AppRole.admin :AppRole.user:AppRole.user,
-        createdAt: data.containsKey('CreatedAt')? data['CreatedAt']?.toDate()?? DateTime.now():DateTime.now(),
-        updatedAt: data.containsKey('UpdatedAt')? data['UpdatedAt']?.toDate()?? DateTime.now():DateTime.now()
-       
-      );
+          id: document.id,
+          firstName:
+              data!.containsKey('FirstName') ? data['FirstName'] ?? '' : '',
+          lastName: data.containsKey('LastName') ? data['LastName'] ?? '' : '',
+          userName: data.containsKey('UserName') ? data['UserName'] ?? '' : '',
+          email: data.containsKey('Email') ? data['Email'] ?? '' : '',
+          phoneNumber:
+              data.containsKey('PhoneNumber') ? data['PhoneNumber'] ?? '' : '',
+          profilePicture: data.containsKey('profilePicture')
+              ? data['profilePicture'] ?? ''
+              : '',
+          // role: data.containsKey('Role') ? (data['Role']?? AppRole.user)== AppRole.admin.name.toString()? AppRole.admin :AppRole.user:AppRole.user,
+          role: data.containsKey('Role') ? 'Admin' : '',
+          createdAt: data.containsKey('CreatedAt')
+              ? data['CreatedAt']?.toDate() ?? DateTime.now()
+              : DateTime.now(),
+          updatedAt: data.containsKey('UpdatedAt')
+              ? data['UpdatedAt']?.toDate() ?? DateTime.now()
+              : DateTime.now());
     } else {
       return UserModel.empty();
     }
