@@ -4,7 +4,6 @@ import 'package:ecommerce_admin_panel/data/repositories/authenticationrepository
 import 'package:ecommerce_admin_panel/data/repositories/user/user_repository.dart';
 import 'package:ecommerce_admin_panel/features/authentication/controller/user_controller.dart';
 import 'package:ecommerce_admin_panel/features/authentication/model/user_model.dart';
-import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
 import 'package:ecommerce_admin_panel/utils/constants/image_strings.dart';
 import 'package:ecommerce_admin_panel/utils/constants/text_strings.dart';
 import 'package:ecommerce_admin_panel/utils/helpers/network_manager.dart';
@@ -36,45 +35,49 @@ class LoginController extends GetxController {
   Future<void> emailAndPasswordSignIn() async {
     try {
       // start loading
+      log('1');
       FullScreenLoader.openLoadingDialog(
         'Registering Admin Account ... ',
         TImages.docerAnimation,
       );
-
+      log('2');
       // check network or internet connectivity
 
       final isConnected = await NetworkManager.instance.isConnected();
+      log('3');
 
       if (!isConnected) {
         FullScreenLoader.stopLoading();
       }
       // form validation
-
+      log('4');
       if (!loginformkey.currentState!.validate()) {
         FullScreenLoader.stopLoading();
         return;
       }
+      log('5');
       // save data if remember me is selected
 
       if (rememberMe.value) {
         localStorage.write('REMEMBER_ME_EMAIL', email.text);
         localStorage.write('REMEMBER_ME_PASSWORD', password.text);
       }
-
+      log('6');
       // login user using  email and password Authentication
       await AuthenticationRepository.instance.loginWithEmailAndPassword(
         email.text,
         password.text,
       );
-
+      log('7');
       // fetch user detailand assign to user controller
       final user = await UserController.instance.fetchUserDetail();
 
       // remove loader
+      log('8');
 
       FullScreenLoader.stopLoading();
-
-      if (user.role != AppRole.admin) {
+      log('9');
+      if (user.role != 'Admin') {
         await AuthenticationRepository.instance.logout();
         TLoaders.errorSnackBar(
             title: 'Error', message: "You Are Not Authorized");
@@ -83,6 +86,7 @@ class LoginController extends GetxController {
 
         AuthenticationRepository.instance.screenRedirect();
       }
+      log('10');
     } catch (e) {
       FullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(

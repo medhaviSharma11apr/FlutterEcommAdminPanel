@@ -3,7 +3,6 @@ import 'package:ecommerce_admin_panel/utils/constants/text_strings.dart';
 import 'package:ecommerce_admin_panel/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../utils/constants/sizes.dart';
 import '../../controller/login_controller.dart';
 
@@ -98,8 +97,8 @@ class Loginform extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                   onPressed: (() {
-                    controller.registerAdmin();
-                    // controller.emailAndPasswordSignIn();
+                    // controller.registerAdmin();
+                    controller.emailAndPasswordSignIn();
                   }),
                   child: const Text(
                     TTexts.signIn,

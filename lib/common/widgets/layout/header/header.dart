@@ -5,6 +5,10 @@ import 'package:ecommerce_admin_panel/utils/constants/image_strings.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:ecommerce_admin_panel/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+
+import '../../../../features/authentication/controller/user_controller.dart';
+import '../../shimmer/shimmer.dart';
 
 class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
   const HeaderWidget({
@@ -17,6 +21,7 @@ class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: TSizes.md,
@@ -60,32 +65,46 @@ class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const TRoundedImage(
-                width: 40,
-                padding: 2,
-                height: 40,
-                imageUrl: TImages.user,
-                imageType: ImageType.asset,
-              ),
+              Obx((() => TRoundedImage(
+                    width: 40,
+                    padding: 2,
+                    height: 40,
+                    imageUrl: controller.user.value.profilePicture.isNotEmpty
+                        ? controller.user.value.profilePicture
+                        : TImages.user,
+                    imageType: controller.user.value.profilePicture.isNotEmpty
+                        ? ImageType.network
+                        : ImageType.asset,
+                  ))),
               const SizedBox(
                 width: TSizes.sm,
               ),
               // Name and email
               if (!TDeviceUtils.isMobileScreen(context))
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Medhavi",
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    Text(
-                      "Medhavi@gmail.com",
-                      style: Theme.of(context).textTheme.labelMedium,
-                    ),
-                  ],
-                )
+                Obx((() => Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        controller.loading.value
+                            ? const ShimmerEffect(
+                                width: 50,
+                                height: 13,
+                              )
+                            : Text(
+                                controller.user.value.fullName,
+                                style: Theme.of(context).textTheme.titleLarge,
+                              ),
+                        controller.loading.value
+                            ? const ShimmerEffect(
+                                width: 50,
+                                height: 13,
+                              )
+                            : Text(
+                                controller.user.value.email,
+                                style: Theme.of(context).textTheme.labelMedium,
+                              ),
+                      ],
+                    )))
             ],
           )
         ],

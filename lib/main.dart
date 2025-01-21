@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:url_strategy/url_strategy.dart';
-
 import 'app.dart';
 import 'data/repositories/authenticationrepository/authentication_repository.dart';
 
 // Entry Point For Flutter App
 Future<void> main() async {
+
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
       .then(
     (FirebaseApp value) => Get.put(AuthenticationRepository()),
@@ -29,4 +30,7 @@ Future<void> main() async {
 
   // Main App starts here
   runApp(const App());
+
+
+  
 }

@@ -1,12 +1,10 @@
 // import 'package:get/get_state_manager/get_state_manager.dart';
 
 import 'dart:developer';
-
 import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
 import '../../../features/authentication/screen/login.dart';
 import '../../../utils/exceptions/firebase_auth_exceptions.dart';
 import '../../../utils/exceptions/firebase_exceptions.dart';
@@ -33,9 +31,11 @@ class AuthenticationRepository extends GetxController {
 
   void screenRedirect() async {
     final user = _auth.currentUser;
+    log('user$user');
 
     // iF user is logged in
     if (user != null) {
+      log('here in roreev');
       // Navigate to the home
       Get.offAllNamed(Routes.dashboard);
     } else {
@@ -49,8 +49,7 @@ class AuthenticationRepository extends GetxController {
       String email, String password) async {
     try {
       // try logging in with email and password it will return user credentials
-
-      return await _auth.signInWithEmailAndPassword(
+     return await _auth.signInWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
       log('FireBaseAuth$e');
@@ -129,5 +128,4 @@ class AuthenticationRepository extends GetxController {
       throw 'SomeThing Went Wrong';
     }
   }
-
 }
