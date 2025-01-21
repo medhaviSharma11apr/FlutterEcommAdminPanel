@@ -1,3 +1,4 @@
+import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 
 class DashBoardDesktopScreen extends StatelessWidget {
@@ -9,42 +10,47 @@ class DashBoardDesktopScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: DataTable(
+          child: PaginatedDataTable2(
+            initialFirstRowIndex: 1,
+            columnSpacing: 12,
+            minWidth: 700,
+            dividerThickness: 0,
+            horizontalMargin: 12,
+            dataRowHeight: 56,
             columns: const [
-              DataColumn(label: Text("Column1")),
-              DataColumn(label: Text("Column2")),
-              DataColumn(label: Text("Column3")),
-              DataColumn(label: Text("Column4")),
+              DataColumn2(label: Text("Column1")),
+              DataColumn2(label: Text("Column2")),
+              DataColumn2(label: Text("Column3")),
+              DataColumn2(label: Text("Column4")),
             ],
-            rows: const [
-              DataRow(cells: [
-                DataCell(Text('Cell1')),
-                DataCell(Text('Cell2')),
-                DataCell(Text('Cell3')),
-                DataCell(Text('Cell4'))
-              ]),
-              DataRow(cells: [
-                DataCell(Text('Cell1')),
-                DataCell(Text('Cell2')),
-                DataCell(Text('Cell3')),
-                DataCell(Text('Cell4'))
-              ]),
-              DataRow(cells: [
-                DataCell(Text('Cell1')),
-                DataCell(Text('Cell2')),
-                DataCell(Text('Cell3')),
-                DataCell(Text('Cell4'))
-              ]),
-              DataRow(cells: [
-                DataCell(Text('Cell1')),
-                DataCell(Text('Cell2')),
-                DataCell(Text('Cell3')),
-                DataCell(Text('Cell4'))
-              ])
-            ],
+            source: MyData(),
           ),
         ),
       ),
     );
   }
+}
+
+class MyData extends DataTableSource {
+  @override
+  DataRow? getRow(int index) {
+    return const DataRow(cells: [
+      DataCell(Text('Hii')),
+      DataCell(Text('Hii')),
+      DataCell(Text('Hii')),
+      DataCell(Text('Hii')),
+    ]);
+  }
+
+  @override
+  // TODO: implement isRowCountApproximate
+  bool get isRowCountApproximate => false;
+
+  @override
+  // TODO: implement rowCount
+  int get rowCount => 36;
+
+  @override
+  // TODO: implement selectedRowCount
+  int get selectedRowCount => 0;
 }
