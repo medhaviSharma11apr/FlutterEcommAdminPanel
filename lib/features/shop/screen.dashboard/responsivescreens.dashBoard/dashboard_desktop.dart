@@ -1,3 +1,4 @@
+import 'package:ecommerce_admin_panel/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -72,13 +73,42 @@ class DashBoardDesktopScreen extends StatelessWidget {
                 ),
               ],
             )
+
+            // Graphs
+
+            ,
+
+            const SizedBox(
+              height: TSizes.spaceBtwSections,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: const [
+                      // Bar Graph
+                      TRoundedContainer(),
+
+                      // Orders
+                      TRoundedContainer()
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: TSizes.spaceBtwSections,
+                ),
+                // Pie Chart
+
+                const Expanded(child: TRoundedContainer())
+              ],
+            )
           ],
         ),
       ),
     ));
   }
 }
-
 
 //  final controller = Get.put(DashBoardController());
 // Padding(
