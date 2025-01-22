@@ -18,25 +18,36 @@ class DashBoardController extends GetxController {
 // order List
   static final List<OrderModel> orders = [
     OrderModel(
-        totalAmount: 3, orderDate: DateTime.now(), status: OrderStatus.pending),
+      totalAmount: 3,
+      orderDate: DateTime.now(),
+      status: OrderStatus.pending,
+      id: '#456372',
+    ),
     OrderModel(
         totalAmount: 2,
         orderDate: DateTime.now(),
-        status: OrderStatus.cancelled),
+        status: OrderStatus.cancelled,
+        id: '#456374'),
     OrderModel(
         totalAmount: 1,
         orderDate: DateTime.now(),
-        status: OrderStatus.processing),
+        status: OrderStatus.processing,
+        id: '#456372'),
     OrderModel(
-        totalAmount: 4, orderDate: DateTime.now(), status: OrderStatus.shipped),
+        totalAmount: 4,
+        orderDate: DateTime.now(),
+        status: OrderStatus.shipped,
+        id: '#456334'),
     OrderModel(
         totalAmount: 8,
         orderDate: DateTime.now(),
-        status: OrderStatus.delivered),
+        status: OrderStatus.delivered,
+        id: '#456332'),
     OrderModel(
         totalAmount: 8,
         orderDate: DateTime.now(),
-        status: OrderStatus.delivered),
+        status: OrderStatus.delivered,
+        id: '#4563234'),
     // OrderModel(totalAmount: 900, orderDate: DateTime.now()),
   ];
 

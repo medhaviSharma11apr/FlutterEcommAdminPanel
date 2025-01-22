@@ -4,6 +4,7 @@ import 'package:ecommerce_admin_panel/features/shop/screen.dashboard/widgets/wee
 import 'package:flutter/material.dart';
 
 import '../../../../utils/constants/sizes.dart';
+import '../tables/data_table.dart';
 import '../widgets/dashboard_card.dart';
 
 class DashBoardMobile extends StatelessWidget {
@@ -82,7 +83,21 @@ class DashBoardMobile extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
               // orders
-              const TRoundedContainer(),
+              TRoundedContainer(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Recent Orders',
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                    const SizedBox(
+                      height: TSizes.spaceBtwSections,
+                    ),
+                    const DashBoardOrderTable()
+                  ],
+                ),
+              ),
 
               const SizedBox(
                 height: TSizes.spaceBtwSections,

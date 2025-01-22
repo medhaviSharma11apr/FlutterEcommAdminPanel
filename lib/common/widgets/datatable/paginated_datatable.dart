@@ -7,8 +7,8 @@ import '../../../utils/popups/animationLoaderWidget.dart';
 
 
 /// Custom PaginatedDataTable widget with additional features
-class TPaginatedDataTable extends StatelessWidget {
-  const TPaginatedDataTable({
+class CustomPaginatedDataTable extends StatelessWidget {
+  const CustomPaginatedDataTable({
     super.key,
     required this.columns,
     required this.source,

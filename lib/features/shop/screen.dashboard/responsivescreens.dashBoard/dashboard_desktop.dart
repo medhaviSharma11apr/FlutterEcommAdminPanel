@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/dashboard.controller/dashboard_controller.dart';
+import '../tables/data_table.dart';
 import '../widgets/dashboard_card.dart';
 import '../widgets/order_status_graph.dart';
 import '../widgets/weekly_sales.dart';
@@ -92,11 +93,28 @@ class DashBoardDesktopScreen extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: Column(
-                    children: const [
+                    children: [
                       // Bar Graph
-                      WeeklySalesGraph(),
+                      const WeeklySalesGraph(),
+                      const SizedBox(
+                        height: TSizes.spaceBtwSections,
+                      ),
                       // Orders
-                      TRoundedContainer()
+                      TRoundedContainer(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Recent Orders',
+                              style: Theme.of(context).textTheme.headlineSmall,
+                            ),
+                            const SizedBox(
+                              height: TSizes.spaceBtwSections,
+                            ),
+                            const DashBoardOrderTable()
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
