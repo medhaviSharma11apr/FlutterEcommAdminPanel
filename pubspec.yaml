@@ -53,6 +53,8 @@ dependencies:
   cloud_firestore: ^4.14.0
   data_table_2: 
   fl_chart: ^0.62.0
+  flutter_dropzone: ^3.0.6
+  universal_html: ^2.2.2
   
 dev_dependencies:
   flutter_test:

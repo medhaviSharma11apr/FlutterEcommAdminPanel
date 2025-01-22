@@ -1,3 +1,5 @@
+import 'package:ecommerce_admin_panel/features/media/screens.media/widgets/media_content.dart';
+import 'package:ecommerce_admin_panel/features/media/screens.media/widgets/media_uploader.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -22,21 +24,33 @@ class MediaDesktopScreen extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   // BreadCrumbs
-                  BreadCrumbsWithHeading(
+                  const BreadCrumbsWithHeading(
                     heading: 'Media',
                     breadcrumbsItem: [Routes.login, Routes.dashboard, "Media"],
                     returnToPreviousScreen: true,
+                  ),
+
+                  SizedBox(
+                    width: TSizes.buttonWidth * 1.5,
+                    child: ElevatedButton.icon(
+                        onPressed: (() {}),
+                        icon: const Icon(Icons.cloud_upload_sharp),
+                        label: const Text(
+                          'Upload Images',
+                        )),
                   )
                 ],
               ),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
-              )
+              ),
               // Upload Area
+              const MediaUploader(),
 
               // Media
+              const MediaContent()
 
               //
             ],
