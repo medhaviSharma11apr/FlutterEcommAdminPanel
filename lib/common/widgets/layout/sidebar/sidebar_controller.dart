@@ -5,7 +5,7 @@ import 'package:ecommerce_admin_panel/utils/device/device_utility.dart';
 import 'package:get/get.dart';
 
 class SideBarController extends GetxController {
-  final activeItem = Routes.responsiveDesignScreen.obs;
+  final activeItem = Routes.dashboard.obs;
   final hoverItem = ''.obs;
 
   void changeActiveItem(String route) {

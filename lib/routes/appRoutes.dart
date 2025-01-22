@@ -7,6 +7,8 @@ import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
+import '../features/media/screens.media/media.dart';
+import '../features/media/screens.media/responsive/media_desktop.dart';
 import '../features/shop/screen.dashboard/dashboard.dart';
 
 class AppRoutes {
@@ -26,9 +28,18 @@ class AppRoutes {
     ),
     GetPage(name: Routes.secondscreenWithUid, page: () => const SecondScreen()),
     GetPage(name: Routes.login, page: (() => const LoginScreen())),
-    GetPage(name: Routes.forgetPassword, page: (() => const ForgetPasswordScreen())),
+    GetPage(
+        name: Routes.forgetPassword,
+        page: (() => const ForgetPasswordScreen())),
     GetPage(
         name: Routes.resetPassword, page: (() => const ResetPasswordScreen())),
-    GetPage(name: Routes.dashboard, page:(() => DashBoardScreen()),middlewares: [RouteMiddleWare()])
+    GetPage(
+        name: Routes.dashboard,
+        page: (() => const DashBoardScreen()),
+        middlewares: [RouteMiddleWare()]),
+    GetPage(
+        name: Routes.media,
+        page: (() => const MediaScreen()),
+        middlewares: [RouteMiddleWare()]),
   ];
 }

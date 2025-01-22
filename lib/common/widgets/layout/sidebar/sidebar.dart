@@ -60,13 +60,13 @@ class SideBarCustom extends StatelessWidget {
                   const MenuItemCustom(
                     icondata: Icons.circle_outlined,
                     itemName: 'Dash Board',
-                    route: Routes.firstscreen,
+                    route: Routes.dashboard,
                   ),
 
                   const MenuItemCustom(
                     icondata: Icons.image,
                     itemName: 'Media',
-                    route: Routes.secondscreen,
+                    route: Routes.media,
                   ),
 
                   const MenuItemCustom(
