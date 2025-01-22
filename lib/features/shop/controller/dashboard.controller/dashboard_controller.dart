@@ -80,4 +80,22 @@ class DashBoardController extends GetxController {
     }
     log('weekly sales: $weeklySales');
   }
+
+  String getOrderStatusName(OrderStatus status) {
+    switch (status) {
+      case OrderStatus.pending:
+        return 'Pending';
+
+      case OrderStatus.processing:
+        return 'Processing';
+      case OrderStatus.cancelled:
+        return 'Cancelled';
+      case OrderStatus.delivered:
+        return 'Delivered';
+      case OrderStatus.shipped:
+        return 'Shipped';
+      default:
+        return 'Unknown';
+    }
+  }
 }

@@ -55,40 +55,43 @@ class OrderstatusPieChart extends StatelessWidget {
 
           // show status and color meta
 
-          DataTable(
-              columnSpacing: 15,
-              columns: const [
-                DataColumn(label: Text('Status')),
-                DataColumn(label: Text('Order')),
-                DataColumn(label: Text('Total')),
-              ],
-              rows: controller.orderStatusData.entries.map((e) {
-                final OrderStatus status = e.key;
-                final int count = e.value;
-                final totalAmount = controller.totalAmounts[status] ?? 0;
-                return DataRow(cells: [
-                  DataCell(Row(
-                    children: [
-                      TCircularContainer(
-                        width: 20,
-                        height: 20,
-                        backgroundcColor:
-                            THelperFunctions.getOrderStatusColor(status),
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Expanded(
-                          child: Text(
-                        '$status',
-                        style: const TextStyle(fontSize: 14),
-                      ))
-                    ],
-                  )),
-                  DataCell(Text(count.toString())),
-                  DataCell(Text('\$${totalAmount.toStringAsFixed(2)}')),
-                ]);
-              }).toList()),
+          SizedBox(
+            width: double.infinity,
+            child: DataTable(
+                // columnSpacing: 15,
+                columns: const [
+                  DataColumn(label: Text('Status')),
+                  DataColumn(label: Text('Order')),
+                  DataColumn(label: Text('Total')),
+                ],
+                rows: controller.orderStatusData.entries.map((e) {
+                  final OrderStatus status = e.key;
+                  final int count = e.value;
+                  final totalAmount = controller.totalAmounts[status] ?? 0;
+                  return DataRow(cells: [
+                    DataCell(Row(
+                      children: [
+                        TCircularContainer(
+                          width: 20,
+                          height: 20,
+                          backgroundcColor:
+                              THelperFunctions.getOrderStatusColor(status),
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Expanded(
+                            child: Text(
+                          controller.getOrderStatusName(status),
+                          style: const TextStyle(fontSize: 14),
+                        ))
+                      ],
+                    )),
+                    DataCell(Text(count.toString())),
+                    DataCell(Text('\$${totalAmount.toStringAsFixed(2)}')),
+                  ]);
+                }).toList()),
+          ),
         ],
       ),
     );
