@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
 import 'package:ecommerce_admin_panel/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
 
@@ -10,27 +11,62 @@ class DashBoardController extends GetxController {
 
   final RxList<double> weeklySales = <double>[].obs;
   final now = DateTime.now();
+  final RxMap<OrderStatus, int> orderStatusData = <OrderStatus, int>{}.obs;
+  final RxMap<OrderStatus, double> totalAmounts = <OrderStatus, double>{}.obs;
+  final RxList<double> weeklyList = <double>[].obs;
 
 // order List
   static final List<OrderModel> orders = [
-    OrderModel(totalAmount: 300, orderDate: DateTime.now()),
-    OrderModel(totalAmount: 200, orderDate: DateTime.now()),
-    OrderModel(totalAmount: 100, orderDate: DateTime.now()),
-    OrderModel(totalAmount: 400, orderDate: DateTime.now()),
-    OrderModel(totalAmount: 800, orderDate: DateTime.now()),
+    OrderModel(
+        totalAmount: 3, orderDate: DateTime.now(), status: OrderStatus.pending),
+    OrderModel(
+        totalAmount: 2,
+        orderDate: DateTime.now(),
+        status: OrderStatus.cancelled),
+    OrderModel(
+        totalAmount: 1,
+        orderDate: DateTime.now(),
+        status: OrderStatus.processing),
+    OrderModel(
+        totalAmount: 4, orderDate: DateTime.now(), status: OrderStatus.shipped),
+    OrderModel(
+        totalAmount: 8,
+        orderDate: DateTime.now(),
+        status: OrderStatus.delivered),
+    OrderModel(
+        totalAmount: 8,
+        orderDate: DateTime.now(),
+        status: OrderStatus.delivered),
     // OrderModel(totalAmount: 900, orderDate: DateTime.now()),
   ];
 
   @override
   void onInit() {
     _calculateWeeklySales();
+    _calculateOrderStatusData();
     super.onInit();
   }
 
-  // calculate weekly sales
+  // calculate order status
+  void _calculateOrderStatusData() {
+    // Reset Status Data
+    orderStatusData.clear();
+    // Map to store total amount for each status
+    totalAmounts.value = {for (var status in OrderStatus.values) status: 0.0};
 
+    for (var order in orders) {
+      // count orders
+      final status = order.status;
+      orderStatusData[status] = (orderStatusData[status] ?? 0) + 1;
+
+      // calculate total amount for each status
+      totalAmounts[status] = (totalAmounts[status] ?? 0) + order.totalAmount!;
+    }
+  }
+
+// calculate weekly sales
   void _calculateWeeklySales() {
-    weeklySales.value = List<double>.filled(7, 1000.0);
+    weeklySales.value = List<double>.filled(7, 300.0);
     for (var order in orders) {
       final DateTime orderWeekStart =
           THelperFunctions.getStartOfWeek(order.orderDate!);
