@@ -1,4 +1,5 @@
 import 'package:ecommerce_admin_panel/common/widgets/breadcrumbs/breadcrumbs_with_heading.dart';
+import 'package:ecommerce_admin_panel/features/shop/screen/category/create_category/widgets/create_category_form.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -27,6 +28,7 @@ class CreatecategoryDesktop extends StatelessWidget {
                 returnToPreviousScreen: true,
               ),
               // Form
+              CreateCategoryForm(),
             ],
           ),
         ),
