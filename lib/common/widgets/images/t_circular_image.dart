@@ -1,3 +1,4 @@
+import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class CircularImage extends StatelessWidget {
     this.backgroundcolor,
     this.width = 56,
     this.height = 56,
-    this.padding = TSizes.sm,
+    this.padding = TSizes.sm, required ImageType imageType,
   }) : super(key: key);
   final bool dark;
   final BoxFit fit;

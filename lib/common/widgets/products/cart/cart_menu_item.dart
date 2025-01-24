@@ -19,14 +19,15 @@ class CartItem extends StatelessWidget {
     return Row(
       children: [
         // Image
-        TRoundedImage(
+        RoundedImage(
           imageUrl: TImages.productImage1,
           width: 60,
           height: 60,
           padding: TSizes.sm,
           backgroundColor: THelperFunctions.isDarkMode(context)
               ? TColors.darkerGrey
-              : TColors.light, imageType:ImageType.network,
+              : TColors.light,
+          imageType: ImageType.network,
         ),
         const SizedBox(
           width: TSizes.spaceBtwItems,

@@ -16,7 +16,7 @@ class CategoryRows extends DataTableSource {
     return DataRow2(cells: [
       DataCell(Row(
         children: [
-          const TRoundedImage(
+          const RoundedImage(
             width: 50,
             height: 50,
             padding: TSizes.sm,

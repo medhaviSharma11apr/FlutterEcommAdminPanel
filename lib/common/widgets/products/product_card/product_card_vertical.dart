@@ -4,7 +4,6 @@ import 'package:ecommerce_admin_panel/common/widgets/products/product_card/produ
 import 'package:ecommerce_admin_panel/utils/constants/colors.dart';
 import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
@@ -23,7 +22,7 @@ class ProductVerticalCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // Get.to(
-          // () => const ProductDetail(),
+        // () => const ProductDetail(),
         // );
       },
       child: Container(
@@ -44,7 +43,7 @@ class ProductVerticalCard extends StatelessWidget {
               child: Stack(
                 children: [
                   // Thumbnail Images
-                  TRoundedImage(
+                  RoundedImage(
                     imageType: ImageType.network,
                     imageUrl: imageUrl,
                     applyImageRadius: true,

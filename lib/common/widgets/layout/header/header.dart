@@ -65,7 +65,7 @@ class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Obx((() => TRoundedImage(
+              Obx((() => RoundedImage(
                     width: 40,
                     padding: 2,
                     height: 40,

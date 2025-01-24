@@ -2,6 +2,7 @@ import 'package:ecommerce_admin_panel/common/widgets/images/t_circular_image.dar
 import 'package:ecommerce_admin_panel/common/widgets/layout/sidebar/menu/menu_item.dart';
 import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:ecommerce_admin_panel/utils/constants/colors.dart';
+import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
 import 'package:ecommerce_admin_panel/utils/constants/image_strings.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:ecommerce_admin_panel/utils/helpers/helper_functions.dart';
@@ -33,6 +34,7 @@ class SideBarCustom extends StatelessWidget {
               height: 100,
               width: 100,
               backgroundcolor: Colors.transparent,
+              imageType: ImageType.asset,
             ),
 
             // space

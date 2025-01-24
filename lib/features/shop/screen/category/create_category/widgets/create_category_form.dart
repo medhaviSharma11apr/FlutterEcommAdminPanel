@@ -1,9 +1,10 @@
 import 'package:ecommerce_admin_panel/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:ecommerce_admin_panel/common/widgets/images/image_uploader.dart';
+import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
+import 'package:ecommerce_admin_panel/utils/constants/image_strings.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:ecommerce_admin_panel/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CreateCategoryForm extends StatelessWidget {
   const CreateCategoryForm({super.key});
@@ -57,7 +58,27 @@ class CreateCategoryForm extends StatelessWidget {
           const SizedBox(
             height: TSizes.spaceBtwInputFields * 2,
           ),
-          
+          ImageUploader(
+            imageType: ImageType.asset,
+            width: 80,
+            height: 80,
+            image: TImages.defaultImage,
+            onIconButtonPressed: () {},
+          ),
+          const SizedBox(
+            height: TSizes.spaceBtwInputFields,
+          ),
+
+          const SizedBox(
+            height: TSizes.spaceBtwInputFields * 2,
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              child: const Text('Create'),
+              onPressed: () {},
+            ),
+          ),
 
           const SizedBox(
             height: TSizes.spaceBtwInputFields * 2,

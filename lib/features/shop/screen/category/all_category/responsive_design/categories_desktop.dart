@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ecommerce_admin_panel/common/widgets/breadcrumbs/breadcrumbs_with_heading.dart';
 import 'package:ecommerce_admin_panel/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:ecommerce_admin_panel/features/shop/screen/category/all_category/tables/data_table.dart';
@@ -37,6 +39,8 @@ class CategoriesDesktopScreen extends StatelessWidget {
                     TableHeader(
                       onChanged: null,
                       onPressed: (() {
+                        log('here');
+                        log('here${Routes.createCategory}');
                         Get.toNamed(Routes.createCategory);
                       }),
                     ),
