@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:ecommerce_admin_panel/app.dart';
 import 'package:ecommerce_admin_panel/features/authentication/screen/forgetpassword/forgetpassword.dart';
 import 'package:ecommerce_admin_panel/features/authentication/screen/login.dart';
@@ -5,7 +6,6 @@ import 'package:ecommerce_admin_panel/features/authentication/screen/resetpasswo
 import 'package:ecommerce_admin_panel/routes/routemiddleware.dart';
 import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:get/route_manager.dart';
-
 import '../features/media/screens.media/media.dart';
 import '../features/shop/screen/category/all_category/widgets/categories.dart';
 import '../features/shop/screen/category/create_category/create_categories.dart';
