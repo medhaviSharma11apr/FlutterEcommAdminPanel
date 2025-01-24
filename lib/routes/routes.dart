@@ -7,7 +7,11 @@ class Routes {
 
   static List sideMenuItems = [firstscreen, secondscreen, secondscreenWithUid];
 
-  static List sidebarMenuItems = [dashboard, media];
+  static List sidebarMenuItems = [
+    dashboard,
+    media,
+    categories,
+  ];
 
   //
 

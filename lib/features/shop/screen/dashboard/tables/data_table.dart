@@ -1,8 +1,8 @@
 import 'package:data_table_2/data_table_2.dart';
-import 'package:ecommerce_admin_panel/features/shop/screen.dashboard/tables/table_source.dart';
+import 'package:ecommerce_admin_panel/features/shop/screen/dashboard/tables/table_source.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../common/widgets/datatable/paginated_datatable.dart';
+import '../../../../../common/widgets/datatable/paginated_datatable.dart';
 
 class DashBoardOrderTable extends StatelessWidget {
   const DashBoardOrderTable({super.key});

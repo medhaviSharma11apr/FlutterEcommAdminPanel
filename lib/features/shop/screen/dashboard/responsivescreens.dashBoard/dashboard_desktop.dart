@@ -3,7 +3,7 @@ import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/dashboard.controller/dashboard_controller.dart';
+import '../../../controller/dashboard.controller/dashboard_controller.dart';
 import '../tables/data_table.dart';
 import '../widgets/dashboard_card.dart';
 import '../widgets/order_status_graph.dart';
@@ -20,7 +20,7 @@ class DashBoardDesktopScreen extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(
           TSizes.defaultSpace,
-        ),
+        ), 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

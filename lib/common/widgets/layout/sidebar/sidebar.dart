@@ -70,9 +70,9 @@ class SideBarCustom extends StatelessWidget {
                   ),
 
                   const MenuItemCustom(
-                    icondata: Icons.picture_in_picture,
-                    itemName: 'Banners',
-                    route: Routes.responsiveDesignScreen,
+                    icondata: Icons.category,
+                    itemName: 'Categories',
+                    route: Routes.categories,
                   ),
                 ],
               ),

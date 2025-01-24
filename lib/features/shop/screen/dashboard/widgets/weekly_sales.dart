@@ -2,11 +2,11 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
-import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/device/device_utility.dart';
-import '../../controller/dashboard.controller/dashboard_controller.dart';
+import '../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
+import '../../../../../utils/constants/colors.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/device/device_utility.dart';
+import '../../../controller/dashboard.controller/dashboard_controller.dart';
 
 class WeeklySalesGraph extends StatelessWidget {
   const WeeklySalesGraph({super.key});

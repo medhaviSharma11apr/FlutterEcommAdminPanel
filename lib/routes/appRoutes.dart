@@ -4,12 +4,13 @@ import 'package:ecommerce_admin_panel/features/authentication/screen/login.dart'
 import 'package:ecommerce_admin_panel/features/authentication/screen/resetpassword/resetpassword.dart';
 import 'package:ecommerce_admin_panel/routes/routemiddleware.dart';
 import 'package:ecommerce_admin_panel/routes/routes.dart';
-import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
 import '../features/media/screens.media/media.dart';
-import '../features/media/screens.media/responsive/media_desktop.dart';
-import '../features/shop/screen.dashboard/dashboard.dart';
+import '../features/shop/screen/category/all_category/widgets/categories.dart';
+import '../features/shop/screen/category/create_category/create_categories.dart';
+import '../features/shop/screen/category/edit_category/edit_categories.dart';
+import '../features/shop/screen/dashboard/dashboard.dart';
 
 class AppRoutes {
   static final List<GetPage> pages = [
@@ -40,6 +41,20 @@ class AppRoutes {
     GetPage(
         name: Routes.media,
         page: (() => const MediaScreen()),
+        middlewares: [RouteMiddleWare()]),
+
+    // categories
+    GetPage(
+        name: Routes.categories,
+        page: (() => const CategoriesScreen()),
+        middlewares: [RouteMiddleWare()]),
+    GetPage(
+        name: Routes.createCategory,
+        page: (() => const CreateCategoryScreen()),
+        middlewares: [RouteMiddleWare()]),
+    GetPage(
+        name: Routes.editCategory,
+        page: (() => const EditCategoryScreen()),
         middlewares: [RouteMiddleWare()]),
   ];
 }

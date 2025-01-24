@@ -1,9 +1,9 @@
 import 'package:ecommerce_admin_panel/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:ecommerce_admin_panel/features/shop/screen.dashboard/widgets/order_status_graph.dart';
-import 'package:ecommerce_admin_panel/features/shop/screen.dashboard/widgets/weekly_sales.dart';
+import 'package:ecommerce_admin_panel/features/shop/screen/dashboard/widgets/order_status_graph.dart';
+import 'package:ecommerce_admin_panel/features/shop/screen/dashboard/widgets/weekly_sales.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../utils/constants/sizes.dart';
+import '../../../../../utils/constants/sizes.dart';
 import '../tables/data_table.dart';
 import '../widgets/dashboard_card.dart';
 

@@ -3,7 +3,7 @@ import 'package:ecommerce_admin_panel/utils/constants/colors.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../common/widgets/texts/section_heading.dart';
+import '../../../../../common/widgets/texts/section_heading.dart';
 
 class DashBoardCard extends StatelessWidget {
   const DashBoardCard({
