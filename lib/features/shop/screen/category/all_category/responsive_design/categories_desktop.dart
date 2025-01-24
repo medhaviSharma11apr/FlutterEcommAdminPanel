@@ -1,10 +1,12 @@
 import 'package:ecommerce_admin_panel/common/widgets/breadcrumbs/breadcrumbs_with_heading.dart';
 import 'package:ecommerce_admin_panel/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:ecommerce_admin_panel/features/shop/screen/category/all_category/tables/data_table.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
+
+import '../../../../../../routes/routes.dart';
+import '../widgets/table_header.dart';
 
 class CategoriesDesktopScreen extends StatelessWidget {
   const CategoriesDesktopScreen({super.key});
@@ -28,17 +30,24 @@ class CategoriesDesktopScreen extends StatelessWidget {
               ),
 
               // Table Body
-              Obx((() => TRoundedContainer(
-                    child: Column(
-                      children: const [
-                        // table header
-
-                        SizedBox(
-                          height: TSizes.spaceBtwItems,
-                        )
-                      ],
+              TRoundedContainer(
+                child: Column(
+                  children: [
+                    // Table header
+                    TableHeader(
+                      onChanged: null,
+                      onPressed: (() {
+                        Get.toNamed(Routes.createCategory);
+                      }),
                     ),
-                  )))
+                    const SizedBox(
+                      height: TSizes.spaceBtwItems,
+                    ),
+                    // Table
+                    const CategoryTable(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
