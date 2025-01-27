@@ -5,6 +5,7 @@ import 'package:ecommerce_admin_panel/utils/constants/image_strings.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:ecommerce_admin_panel/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CreateCategoryForm extends StatelessWidget {
   const CreateCategoryForm({super.key});
@@ -45,7 +46,7 @@ class CreateCategoryForm extends StatelessWidget {
               decoration: const InputDecoration(
                   hintText: 'Parents Category',
                   labelText: 'Parents Category',
-                  icon: Icon(Icons.beach_access)),
+                  prefixIcon: Icon(Icons.beach_access)),
               items: [
                 DropdownMenuItem(
                     value: '',
@@ -62,12 +63,13 @@ class CreateCategoryForm extends StatelessWidget {
             imageType: ImageType.asset,
             width: 80,
             height: 80,
-            image: TImages.defaultImage,
+            image: TImages.ikeaLogo,
             onIconButtonPressed: () {},
           ),
           const SizedBox(
             height: TSizes.spaceBtwInputFields,
           ),
+    
 
           const SizedBox(
             height: TSizes.spaceBtwInputFields * 2,

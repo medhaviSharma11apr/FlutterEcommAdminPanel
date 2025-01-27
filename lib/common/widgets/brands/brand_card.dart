@@ -1,5 +1,3 @@
-
-
 import 'package:ecommerce_admin_panel/common/widgets/images/t_circular_image.dart';
 import 'package:flutter/material.dart';
 
@@ -38,6 +36,7 @@ class BrandCard extends StatelessWidget {
                 dark: dark,
                 image: TImages.animalIcon,
                 overlaycolor: dark ? Colors.white : Colors.black,
+                imageType: ImageType.asset,
               ),
             ),
             const SizedBox(
