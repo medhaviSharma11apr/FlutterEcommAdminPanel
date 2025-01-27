@@ -5,11 +5,16 @@ import 'package:ecommerce_admin_panel/utils/constants/image_strings.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:ecommerce_admin_panel/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-class CreateCategoryForm extends StatelessWidget {
+class CreateCategoryForm extends StatefulWidget {
   const CreateCategoryForm({super.key});
 
+  @override
+  State<CreateCategoryForm> createState() => _CreateCategoryFormState();
+}
+
+class _CreateCategoryFormState extends State<CreateCategoryForm> {
+  bool checkBoxValue = false;
   @override
   Widget build(BuildContext context) {
     return TRoundedContainer(
@@ -69,7 +74,15 @@ class CreateCategoryForm extends StatelessWidget {
           const SizedBox(
             height: TSizes.spaceBtwInputFields,
           ),
-    
+          CheckboxListTile(
+            
+              value: checkBoxValue,
+              title: const Text('Featured'),
+              onChanged: ((value) {
+                setState(() {
+                  checkBoxValue = value!;
+                });
+              })),
 
           const SizedBox(
             height: TSizes.spaceBtwInputFields * 2,
