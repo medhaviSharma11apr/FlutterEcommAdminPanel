@@ -1,20 +1,20 @@
-import 'package:ecommerce_admin_panel/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:ecommerce_admin_panel/common/widgets/images/image_uploader.dart';
-import 'package:ecommerce_admin_panel/utils/constants/enums.dart';
-import 'package:ecommerce_admin_panel/utils/constants/image_strings.dart';
-import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
+
 import 'package:ecommerce_admin_panel/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
-class CreateCategoryForm extends StatefulWidget {
-  const CreateCategoryForm({super.key});
+import '../../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
+import '../../../../../../common/widgets/images/image_uploader.dart';
+import '../../../../../../utils/constants/enums.dart';
+import '../../../../../../utils/constants/image_strings.dart';
+import '../../../../../../utils/constants/sizes.dart';
 
-  @override
-  State<CreateCategoryForm> createState() => _CreateCategoryFormState();
-}
+class EditCategoryForm extends StatelessWidget {
+  const EditCategoryForm({super.key});
+  
+  get checkBoxValue => null;
 
-class _CreateCategoryFormState extends State<CreateCategoryForm> {
-  bool checkBoxValue = false;
   @override
   Widget build(BuildContext context) {
     return TRoundedContainer(
@@ -75,13 +75,12 @@ class _CreateCategoryFormState extends State<CreateCategoryForm> {
             height: TSizes.spaceBtwInputFields,
           ),
           CheckboxListTile(
-            
               value: checkBoxValue,
               title: const Text('Featured'),
               onChanged: ((value) {
-                setState(() {
-                  checkBoxValue = value!;
-                });
+                // setState(() {
+                //   checkBoxValue = value!;
+                // });
               })),
 
           const SizedBox(
