@@ -1,9 +1,5 @@
-
 import 'package:ecommerce_admin_panel/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import '../../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
 import '../../../../../../common/widgets/images/image_uploader.dart';
 import '../../../../../../utils/constants/enums.dart';
@@ -12,8 +8,8 @@ import '../../../../../../utils/constants/sizes.dart';
 
 class EditCategoryForm extends StatelessWidget {
   const EditCategoryForm({super.key});
-  
-  get checkBoxValue => null;
+
+  get checkBoxValue => false;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +25,7 @@ class EditCategoryForm extends StatelessWidget {
             height: TSizes.sm,
           ),
           Text(
-            'Create New Category',
+            'Update Category',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
           const SizedBox(
@@ -101,6 +97,4 @@ class EditCategoryForm extends StatelessWidget {
       )),
     );
   }
-
-
 }
