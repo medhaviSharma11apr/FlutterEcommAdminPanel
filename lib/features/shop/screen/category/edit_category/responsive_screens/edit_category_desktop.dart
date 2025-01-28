@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class EditCategoryDesktopScreen extends StatelessWidget {
-  const EditCategoryDesktopScreen({super.key});
+import '../../../../model/categoryModel.dart';
 
-  // final CategoryModel categorymoel;
+class EditCategoryDesktopScreen extends StatelessWidget {
+  const EditCategoryDesktopScreen({super.key, required this.categorymodel});
+
+  final CategoryModel categorymodel;
 
   @override
   Widget build(BuildContext context) {
