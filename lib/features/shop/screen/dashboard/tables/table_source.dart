@@ -26,7 +26,7 @@ class TableSource extends DataTableSource {
       const DataCell(Text('5 Items')),
       DataCell(
           // Text(DashBoardController.instance.getOrderStatusName(order.status))
-          TRoundedContainer(
+          RoundedContainer(
         radius: TSizes.cardRadiusSm,
         padding: const EdgeInsets.symmetric(
           vertical: TSizes.xs,

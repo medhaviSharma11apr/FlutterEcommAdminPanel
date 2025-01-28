@@ -36,7 +36,7 @@ class ProductVerticalCard extends StatelessWidget {
         child: Column(
           children: [
             // Thumbnail , wishlist, dicount button
-            TRoundedContainer(
+            RoundedContainer(
               height: 180,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
@@ -52,7 +52,7 @@ class ProductVerticalCard extends StatelessWidget {
 
                   Positioned(
                     top: 12,
-                    child: TRoundedContainer(
+                    child: RoundedContainer(
                       radius: TSizes.sm,
                       backgroundColor: TColors.secondary.withOpacity(0.8),
                       padding: const EdgeInsets.symmetric(

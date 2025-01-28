@@ -20,7 +20,7 @@ class DashBoardDesktopScreen extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(
           TSizes.defaultSpace,
-        ), 
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -100,7 +100,7 @@ class DashBoardDesktopScreen extends StatelessWidget {
                         height: TSizes.spaceBtwSections,
                       ),
                       // Orders
-                      TRoundedContainer(
+                      RoundedContainer(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

@@ -28,7 +28,7 @@ class ProductHorizontalCard extends StatelessWidget {
       child: Row(
         children: [
           ///Thumbnail
-          TRoundedContainer(
+          RoundedContainer(
             height: 120,
             padding: const EdgeInsets.all(TSizes.sm),
             backgroundColor: dark ? TColors.dark : TColors.white,
@@ -48,7 +48,7 @@ class ProductHorizontalCard extends StatelessWidget {
                 // sale tag
                 Positioned(
                   top: 12,
-                  child: TRoundedContainer(
+                  child: RoundedContainer(
                     radius: TSizes.sm,
                     backgroundColor: TColors.secondary.withOpacity(0.8),
                     padding: const EdgeInsets.symmetric(

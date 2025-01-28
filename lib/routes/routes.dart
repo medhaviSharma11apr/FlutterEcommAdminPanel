@@ -11,6 +11,7 @@ class Routes {
     dashboard,
     media,
     categories,
+    brands,
   ];
 
   //

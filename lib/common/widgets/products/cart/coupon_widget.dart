@@ -14,7 +14,7 @@ class CouponCodeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TRoundedContainer(
+    return RoundedContainer(
       showBorder: true,
       backgroundColor: dark ? TColors.dark : TColors.white,
       padding: const EdgeInsets.only(
@@ -57,4 +57,3 @@ class CouponCodeWidget extends StatelessWidget {
     );
   }
 }
-

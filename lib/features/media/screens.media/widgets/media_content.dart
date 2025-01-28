@@ -1,5 +1,3 @@
-
-
 import 'package:ecommerce_admin_panel/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +9,16 @@ class MediaContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TRoundedContainer(
+    return RoundedContainer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: const [
           // Media Image Header
-          SizedBox(height: TSizes.spaceBtwSections,),
+          SizedBox(
+            height: TSizes.spaceBtwSections,
+          ),
 
-          // Show Media 
+          // Show Media
         ],
       ),
     );

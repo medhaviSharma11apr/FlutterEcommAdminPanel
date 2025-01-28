@@ -26,7 +26,7 @@ class DashBoardCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TRoundedContainer(
+    return RoundedContainer(
       onTap: onTap,
       child: Column(
         children: [

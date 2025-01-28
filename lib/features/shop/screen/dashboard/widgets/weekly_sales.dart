@@ -15,7 +15,7 @@ class WeeklySalesGraph extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(DashBoardController());
     return Container(
-      child: TRoundedContainer(
+      child: RoundedContainer(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

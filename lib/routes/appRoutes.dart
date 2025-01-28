@@ -7,6 +7,7 @@ import 'package:ecommerce_admin_panel/routes/routemiddleware.dart';
 import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:get/route_manager.dart';
 import '../features/media/screens.media/media.dart';
+import '../features/shop/screen/brand/all_brand/brands.dart';
 import '../features/shop/screen/category/all_category/widgets/categories.dart';
 import '../features/shop/screen/category/create_category/create_categories.dart';
 import '../features/shop/screen/category/edit_category/edit_categories.dart';
@@ -43,7 +44,7 @@ class AppRoutes {
         page: (() => const MediaScreen()),
         middlewares: [RouteMiddleWare()]),
 
-    // categories
+    // Categories
     GetPage(
         name: Routes.categories,
         page: (() => const CategoriesScreen()),
@@ -56,5 +57,10 @@ class AppRoutes {
         name: Routes.editCategory,
         page: (() => const EditCategoryScreen()),
         middlewares: [RouteMiddleWare()]),
+    // Brands
+
+      GetPage(name: Routes.brands, page: (() => BrandsScreens()),middlewares: [RouteMiddleWare(),]),
+      // GetPage(name: Routes.editBrand, page: (() => ),middlewares: [RouteMiddleWare(),]),
+      // GetPage(name: Routes.createBrand, page: (() => ),middlewares: [RouteMiddleWare(),]),
   ];
 }

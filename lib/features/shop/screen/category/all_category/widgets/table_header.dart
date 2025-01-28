@@ -9,9 +9,11 @@ class TableHeader extends StatelessWidget {
     super.key,
     this.onPressed,
     this.onChanged,
+    this.buttonText = 'Create New Category',
   });
   final Function()? onPressed;
   final Function(String)? onChanged;
+  final String buttonText;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,7 +30,7 @@ class TableHeader extends StatelessWidget {
                       onPressed;
                       Get.toNamed(Routes.createCategory);
                     }),
-                    child: const Text('Create New Category')),
+                    child:  Text(buttonText,)),
               ),
             ],
           ),

@@ -83,7 +83,7 @@ class DashboardTablet extends StatelessWidget {
               ),
 
               // Sales
-              TRoundedContainer(
+              RoundedContainer(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

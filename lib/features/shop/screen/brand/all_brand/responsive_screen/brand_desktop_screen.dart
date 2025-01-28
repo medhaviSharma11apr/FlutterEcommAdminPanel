@@ -1,32 +1,27 @@
-import 'dart:developer';
-
 import 'package:ecommerce_admin_panel/common/widgets/breadcrumbs/breadcrumbs_with_heading.dart';
 import 'package:ecommerce_admin_panel/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:ecommerce_admin_panel/features/shop/screen/category/all_category/tables/data_table.dart';
+import 'package:ecommerce_admin_panel/features/shop/screen/brand/all_brand/table/data_table.dart';
+import 'package:ecommerce_admin_panel/features/shop/screen/category/all_category/widgets/table_header.dart';
+import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:ecommerce_admin_panel/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../routes/routes.dart';
-import '../widgets/table_header.dart';
-
-class CategoriesDesktopScreen extends StatelessWidget {
-  const CategoriesDesktopScreen({super.key});
+class BrandsDesktopScreen extends StatelessWidget {
+  const BrandsDesktopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(
-            TSizes.defaultSpace,
-          ),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // BreadCrumbs
+              // Bread Crumbs
               const BreadCrumbsWithHeading(
-                  heading: "Categories", breadcrumbsItem: ['Categories']),
+                  heading: 'Brands', breadcrumbsItem: ['Brands']),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
@@ -35,23 +30,22 @@ class CategoriesDesktopScreen extends StatelessWidget {
               RoundedContainer(
                 child: Column(
                   children: [
-                    // Table header
+                    // Table Header
                     TableHeader(
-                      onChanged: null,
-                      onPressed: (() {
-                        log('here');
-                        log('here${Routes.createCategory}');
-                        Get.toNamed(Routes.createCategory);
-                      }),
+                      buttonText: 'Create New Brand',
+                      onPressed: () {
+                        Get.toNamed(Routes.createBrand);
+                      },
                     ),
                     const SizedBox(
                       height: TSizes.spaceBtwItems,
                     ),
                     // Table
-                    const CategoryTable(),
+
+                    const BrandTable()
                   ],
                 ),
-              ),
+              )
             ],
           ),
         ),

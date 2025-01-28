@@ -20,7 +20,7 @@ class MediaUploader extends StatelessWidget {
     return Column(
       children: [
         // Drag and drop area
-        TRoundedContainer(
+        RoundedContainer(
           height: 250,
           showBorder: true,
           borderColor: TColors.borderPrimary,
@@ -80,7 +80,7 @@ class MediaUploader extends StatelessWidget {
         ),
 
         // Locally selected images
-        TRoundedContainer(
+        RoundedContainer(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
