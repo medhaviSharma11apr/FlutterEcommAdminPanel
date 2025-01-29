@@ -76,12 +76,17 @@ class SideBarCustom extends StatelessWidget {
                     itemName: 'Categories',
                     route: Routes.categories,
                   ),
-                   const MenuItemCustom(
+                  const MenuItemCustom(
                     icondata: Icons.branding_watermark,
                     itemName: 'Brands',
                     route: Routes.brands,
                   ),
-                    const MenuItemCustom(
+                  const MenuItemCustom(
+                    icondata: Icons.picture_in_picture,
+                    itemName: 'Banners',
+                    route: Routes.banner,
+                  ),
+                  const MenuItemCustom(
                     icondata: Icons.logout,
                     itemName: 'Logout',
                     route: 'logout',

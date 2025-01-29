@@ -3,11 +3,16 @@ import 'package:ecommerce_admin_panel/app.dart';
 import 'package:ecommerce_admin_panel/features/authentication/screen/forgetpassword/forgetpassword.dart';
 import 'package:ecommerce_admin_panel/features/authentication/screen/login.dart';
 import 'package:ecommerce_admin_panel/features/authentication/screen/resetpassword/resetpassword.dart';
+import 'package:ecommerce_admin_panel/features/shop/screen/brand/create_brand/create_brand.dart';
 import 'package:ecommerce_admin_panel/routes/routemiddleware.dart';
 import 'package:ecommerce_admin_panel/routes/routes.dart';
 import 'package:get/route_manager.dart';
 import '../features/media/screens.media/media.dart';
+import '../features/shop/screen/banner/all_banners/banners.dart';
+import '../features/shop/screen/banner/create_banner/createBanners.dart';
+import '../features/shop/screen/banner/edit_banner/editBanner.dart';
 import '../features/shop/screen/brand/all_brand/brands.dart';
+import '../features/shop/screen/brand/edit_brand/edit_brand.dart';
 import '../features/shop/screen/category/all_category/widgets/categories.dart';
 import '../features/shop/screen/category/create_category/create_categories.dart';
 import '../features/shop/screen/category/edit_category/edit_categories.dart';
@@ -59,8 +64,43 @@ class AppRoutes {
         middlewares: [RouteMiddleWare()]),
     // Brands
 
-      GetPage(name: Routes.brands, page: (() => BrandsScreens()),middlewares: [RouteMiddleWare(),]),
-      // GetPage(name: Routes.editBrand, page: (() => ),middlewares: [RouteMiddleWare(),]),
-      // GetPage(name: Routes.createBrand, page: (() => ),middlewares: [RouteMiddleWare(),]),
+    GetPage(
+        name: Routes.brands,
+        page: (() => const BrandsScreens()),
+        middlewares: [
+          RouteMiddleWare(),
+        ]),
+    GetPage(
+        name: Routes.editBrand,
+        page: (() => const EditBrand()),
+        middlewares: [
+          RouteMiddleWare(),
+        ]),
+    GetPage(
+        name: Routes.createBrand,
+        page: (() => const CreateBrand()),
+        middlewares: [
+          RouteMiddleWare(),
+        ]),
+
+    // / Banners
+    GetPage(
+        name: Routes.banner,
+        page: (() => const BannersScreen()),
+        middlewares: [
+          RouteMiddleWare(),
+        ]),
+    GetPage(
+        name: Routes.editBanner,
+        page: (() => const EditBannersScreen()),
+        middlewares: [
+          RouteMiddleWare(),
+        ]),
+    GetPage(
+        name: Routes.createBanner,
+        page: (() => const CreateBannersScreen()),
+        middlewares: [
+          RouteMiddleWare(),
+        ]),
   ];
 }

@@ -22,7 +22,9 @@ class BrandTabletScreen extends StatelessWidget {
             children: [
               // Bread Crumbs
               const BreadCrumbsWithHeading(
-                  heading: 'Brands', breadcrumbsItem: ['Brands']),
+                  returnToPreviousScreen: true,
+                  heading: 'Create Brands',
+                  breadcrumbsItem: [Routes.categories, 'Create Brand']),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),

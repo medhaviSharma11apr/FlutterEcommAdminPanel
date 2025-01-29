@@ -1,8 +1,5 @@
 import 'package:ecommerce_admin_panel/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../../../../routes/routes.dart';
 
 class TableHeader extends StatelessWidget {
   const TableHeader({
@@ -26,11 +23,10 @@ class TableHeader extends StatelessWidget {
               SizedBox(
                 width: 200,
                 child: ElevatedButton(
-                    onPressed: (() {
-                      onPressed;
-                      Get.toNamed(Routes.createCategory);
-                    }),
-                    child:  Text(buttonText,)),
+                    onPressed: onPressed,
+                    child: Text(
+                      buttonText,
+                    )),
               ),
             ],
           ),

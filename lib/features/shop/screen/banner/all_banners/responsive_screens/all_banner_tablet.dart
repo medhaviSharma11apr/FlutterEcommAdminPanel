@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -10,8 +12,8 @@ import '../../../../../../utils/constants/sizes.dart';
 import '../../../category/all_category/widgets/table_header.dart';
 import '../table/data_table.dart';
 
-class BrandMobileScreen extends StatelessWidget {
-  const BrandMobileScreen({super.key});
+class BannerTabletScreen extends StatelessWidget {
+  const BannerTabletScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,30 +26,25 @@ class BrandMobileScreen extends StatelessWidget {
             children: [
               // Bread Crumbs
               const BreadCrumbsWithHeading(
-                returnToPreviousScreen: true,
-                  heading: 'Create Brands',
-                  breadcrumbsItem: [Routes.categories, 'Create Brand']),
+                  heading: "Banners", breadcrumbsItem: ['Banners']),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
 
-              // Table Body
+              /// Trounded
               RoundedContainer(
                 child: Column(
                   children: [
                     // Table Header
                     TableHeader(
-                      buttonText: 'Create New Brand',
-                      onPressed: () {
-                        Get.toNamed(Routes.createBrand);
-                      },
+                      buttonText: 'Create New Banner',
+                      onPressed: () => Get.toNamed(Routes.createBanner),
                     ),
                     const SizedBox(
                       height: TSizes.spaceBtwItems,
                     ),
                     // Table
-
-                    const BrandTable()
+                    const BannerTable(),
                   ],
                 ),
               )
@@ -56,5 +53,6 @@ class BrandMobileScreen extends StatelessWidget {
         ),
       ),
     );
+    ;
   }
 }
